@@ -1,0 +1,14 @@
+{
+  "local.datasource.username" : "username",
+  "local.datasource.password" : "pwd",
+  "local.datasource.driver-class-name" : "com.mysql.cj.jdbc.Driver",
+  "local.datasource.url" : "jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=CONVERT_TO_NULL",
+  "local.datasource.host" : "localhost",
+  "local.datasource.port" : "3306",
+  "local.datasource.database" : "test",
+
+  "target.datasource.username" : "username",
+  "target.datasource.password" : "pwd",
+  "target.datasource.driver-class-name" : "oracle.jdbc.driver.OracleDriver",
+  "target.datasource.url" : "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=localhost)))"
+}
