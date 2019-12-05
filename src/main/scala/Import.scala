@@ -92,7 +92,6 @@ class Import (meta : String) {
     }
     if (db != null) db.close()
 
-    callDeltaCalc()
     Common.log(getProcessId(), "Successfully completed loading data from source to target")
   }
 
@@ -187,20 +186,6 @@ class Import (meta : String) {
           loop.break()
         index = index + 1
       }
-    }
-  }
-
-  def callDeltaCalc(): Unit = {
-    if (idKey == "QryHVCurrentMRPLatest") {
-      val post = new HttpPost(Common.cosaUrl)
-      post.setEntity(new StringEntity("{}"))
-      post.setHeader("Accept", "application/json");
-      post.setHeader("Content-type", "application/json");
-      val client = new DefaultHttpClient
-      val response = client.execute(post)
-      response.getAllHeaders.foreach(arg => println(arg))
-      println(s"Status code after making the API call to ${Common.cosaUrl} is ${response.getStatusLine.getStatusCode}");
-      Common.log(getProcessId(), "Called API to calculate bridge information and publish to cosa")
     }
   }
 
